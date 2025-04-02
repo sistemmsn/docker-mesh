@@ -1,0 +1,118 @@
+{
+    "settings": {
+      "cert": "mesh.southcentralus.cloudapp.azure.com",
+      "mongodb": "mongodb://mongodb:27017/mesh",
+      "mongodbcol": "mesh",
+      "WANonly": true,
+      "port": 443,
+      "aliasPort": 443,
+      "redirPort": 80,
+      "redirAliasPort": 80,
+      "_publicPushNotifications": true,
+      "_AllowLoginToken": true,
+      "AllowFraming": true,
+      "_Compression": true,
+      "_WsCompression": true,
+      "_AgentWsCompression": true,
+      "SessionTime": 15,
+      "SessionKey": "dfsdfsdfsdfsdfsdfssdfdfssdfsdfdfsdfsdfsdfsdf",
+      "DbRecordsEncryptKey": "fdfsdfsdfdfsdfsdfsdfsdfsdfsdfsdffdsdfsdfs",
+      "DbRecordsDecryptKey": "dfsdfsdfsdfsdfsdfssdfdfsdfsdfsdfsdsfdfsdfs",
+      "DesktopMultiplex": true,
+      "_ExactPorts":true,
+      "ClickOnce": true,
+      "AgentPong": 300,
+      "BrowserPong":120,
+      "AgentIdleTimeout":150,
+      "AllowHighQualityDesktop": false,
+      "AutoBackup":{
+        "backupIntervalHours":24,
+        "keepLastDaysBackup":5,
+        "zipPassword": "JCuhU2_hgd4OdjsV*",
+        "_backupPath": "/tmp/backups"
+      },
+      "MaxInvalidLogin":{"time": 3, "count": 5, "coolofftime": 10},
+      "Plugins":{
+        "enable": true
+      }
+    },
+    "domains": {
+      "": {
+        "_title": "MyServer",
+        "_title2": "Servername",
+        "minify": true,
+        "_newAccounts": true,
+        "_userNameIsEmail": true,
+        "WelcomeText" : "SISTEMA ES PROPIEDAD DE EMPRESA, Y ES PARA USO AUTORIZADO. CUALQUIER USO INDEBIDO DEL SISTEMA SERA INTERCEPTADO, MONITOREADO, GRABADO E INSPECCIONADO. PARA ACCEDER AL EQUIPO EL USUARIO ASUME LAS POLITICAS DE SEGURIDAD, DE LO CONTRARIO SE TOMARAN LAS MEDIDAS LEGALES CORRESPONDIENTES.",
+        "mstsc": true,
+        "ssh": true,
+        "GeoLocation": true,
+        "novnc": true,
+        "AutoRemoveInactiveDevices": 6,
+        "agentInviteCodes": true,
+          "clipboardGet": true,
+        "SessionRecording":{
+          "_onlySelectedUsers": true,
+          "_onlySelectedUserGroups": true,
+          "_onlySelectedDeviceGroups": true,
+          "_filepath": "/opt/meshcentral/meshcentral-data/session_recording",
+          "index": true,
+          "protocols": [ 1, 2, 5, 200]
+        },
+        "PasswordRequeriments": {
+          "min": 8,
+          "max": 128,
+          "upper": 1,
+          "lower": 1,
+          "numeric": 1,
+          "nonalpha": 1,
+          "reset": 90,
+          "force2factor": true,
+          "skip2factor": "127.0.0.1"       
+        },
+        "agentCustomization": {
+          "displayName": "NS",
+          "description": "NS agent for remote monitoring, management and assistance.",
+          "companyName": "NatureSweet",
+          "serviceName": "ns-agent",
+          "_image": "logo.png",
+          "installText": "Este es el Agente de instalacion para el acceso remoto",
+          "fileName": "ns-agent"
+        },
+        "assistantCustomization": {
+          "title": "NS® IT™",
+          "_image": "logo.png",
+          "fileName": "Asisstant for users"
+        },
+        "UserSessionIdleTimeout": 15,
+        "authStrategies": {
+          "azure": {
+            "callbackurl": "https://mesh.southcentralus.cloudapp.azure.com/auth-azure-callback",
+            "newAccounts": true,
+            "_newAccountsUserGroups": [ "ugrp//xxxxxxxxxxxxxxxxx" ],
+            "clientid": "d3d56da1-9c79-4bb7-9d3c-yqVCf4sOjO",
+            "clientsecret": "Sdc8Q~ZqJtLGJ2QRMhg6m.qncfza.b",
+            "tenantid": "35f36e82-1a44-4e22-879b-babffasdaddasda"
+          }
+        }
+      }
+    },
+    "letsencrypt": {
+      "__comment__": "Requires NodeJS 8.x or better, Go to https://letsdebug.net/ first before trying Let's Encrypt.",
+      "email": "noreplay@empresa.com",
+      "names": "mesh.southcentralus.cloudapp.azure.com",
+      "skipChallengeVerification": true,
+      "production": true
+    },
+  
+    "smtp": {
+      "host": "smtp.gmail.com",
+      "port": 587,
+      "from": "noreplay@gmail.com",
+      "user": "noreplay@gmail.com",
+      "pass": "d3d56da1",
+      "tls": false,
+      "tlscertcheck": false
+   }
+  }
+  
