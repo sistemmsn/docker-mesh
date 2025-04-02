@@ -1,0 +1,41 @@
+services:
+  mc:
+    image: mesh:sistemmsn
+    container_name: meshcentral
+    hostname: meshcentral
+    volumes:
+      - meshcentral-data:/opt/meshcentral/meshcentral-data
+      - meshcentral-files:/opt/meshcentral/meshcentral-files
+      - meshcentral-backups:/opt/meshcentral/meshcentral-backups
+      - meshcentral-web:/opt/meshcentral/meshcentral-web
+    restart: always
+    ports:
+      - 443:443
+      - 80:80
+    depends_on:
+      - db
+    networks:
+     - proxy  
+  db:
+    image: mongo:latest
+    restart: always
+    container_name: mongodb
+    hostname: mongodb
+    volumes:
+       - db:/data/db
+       - dataconf:/data/configdb
+    networks:
+     - proxy    
+
+
+networks:
+  proxy:
+    external: true
+
+volumes:
+    db:
+    dataconf:
+    meshcentral-web:
+    meshcentral-backups:
+    meshcentral-files:
+    meshcentral-data:
